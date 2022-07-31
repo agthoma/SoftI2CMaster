@@ -80,7 +80,11 @@ public:
 //  using Print::write;
 };
 
+#if defined(USE_SOFTWIRE_H_NAME_SOFT)
+extern SoftWire Soft;
+#else
 extern SoftWire Wire;
+#endif
 
 #if !defined(USE_SOFTWIRE_H_AS_PLAIN_INCLUDE)
 /*
@@ -245,7 +249,11 @@ extern SoftWire Wire;
 
 // Preinstantiate Objects //////////////////////////////////////////////////////
 
+#if defined(USE_SOFTWIRE_H_NAME_SOFT)
+SoftWire Soft = SoftWire();
+#else
 SoftWire Wire = SoftWire();
+#endif
 
 #endif // !defined(USE_SOFTWIRE_H_AS_PLAIN_INCLUDE)
 
